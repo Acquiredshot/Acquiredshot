@@ -45,7 +45,7 @@
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=Acquiredshot&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
+  <img src="https://nirzak-streak-stats.vercel.app?user=Acquiredshot&theme=tokyonight&hide_border=true" alt="GitHub Streak"/>
 </div>
 
 ---
@@ -75,7 +75,7 @@
 ## 🏆 GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Acquiredshot&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4&column=7" alt="GitHub Trophies"/>
+  <img src="https://github-trophies.vercel.app/?username=Acquiredshot&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4&column=7&row=1" alt="GitHub Trophies"/>
 </p>
 
 ---
