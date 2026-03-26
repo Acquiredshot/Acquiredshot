@@ -275,8 +275,7 @@ def generate_innovation_svg(repo_summaries):
             pad = 14  # horizontal padding
             w = max(len(t) * char_w + pad, 40)
             tag_parts.append(
-                f'<rect x="{tag_x}" y="{y_offset + 44}" width="{w:.0f}" height="16" rx="8" fill="{lang_color}" opacity="0.25"/>'
-                f'<text x="{tag_x + w / 2:.0f}" y="{y_offset + 55}" font-size="8" fill="#c0caf5" text-anchor="middle" font-family="Segoe UI, Ubuntu, sans-serif">{label}</text>'
+                f'<text x="{tag_x}" y="{y_offset + 55}" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">{label}</text>'
             )
             tag_x += w + 8
         topic_tags = "".join(tag_parts)
