@@ -266,11 +266,20 @@ def generate_innovation_svg(repo_summaries):
         lang_color = LANG_COLORS.get(lang, "#70a5fd")
         stars = repo.get("stargazers_count", 0)
         topics = repo.get("topics", [])[:3]
-        topic_tags = "".join(
-            f'<rect x="{305 + j * 95}" y="{y_offset + 42}" width="85" height="20" rx="10" fill="{lang_color}" opacity="0.25"/>'
-            f'<text x="{347 + j * 95}" y="{y_offset + 56}" font-size="10" fill="#c0caf5" text-anchor="middle">{_escape_xml(t)}</text>'
-            for j, t in enumerate(topics)
-        )
+        # Dynamically size topic badges based on text length
+        tag_parts = []
+        tag_x = 305
+        for t in topics:
+            label = _escape_xml(t)
+            char_w = 5.5  # approx width per char at font-size 8
+            pad = 14  # horizontal padding
+            w = max(len(t) * char_w + pad, 40)
+            tag_parts.append(
+                f'<rect x="{tag_x}" y="{y_offset + 44}" width="{w:.0f}" height="16" rx="8" fill="{lang_color}" opacity="0.25"/>'
+                f'<text x="{tag_x + w / 2:.0f}" y="{y_offset + 55}" font-size="8" fill="#c0caf5" text-anchor="middle" font-family="Segoe UI, Ubuntu, sans-serif">{label}</text>'
+            )
+            tag_x += w + 8
+        topic_tags = "".join(tag_parts)
 
         repo_blocks += f"""
     <g opacity="0">
