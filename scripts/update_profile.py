@@ -28,20 +28,22 @@ def fetch_repos():
         resp = requests.get(
             f"https://api.github.com/users/{GITHUB_USERNAME}/repos",
             headers=HEADERS_GH,
-            params={"per_page": 100, "page": page, "sort": "updated"},
+            params={"per_page": 100, "page": page, "sort": "updated", "type": "public"},
             timeout=30,
         )
         resp.raise_for_status()
         batch = resp.json()
         if not batch:
             break
-        repos.extend(batch)
+        # SECURITY: Only include public, non-fork repos — never expose private repo data
+        public_only = [r for r in batch if not r.get("private") and not r.get("fork")]
+        repos.extend(public_only)
         page += 1
     return repos
 
 
 def fetch_recent_commits(repo_name, count=10):
-    """Fetch the most recent commits for a repo."""
+    """Fetch the most recent commits for a public repo. Only returns commit messages (no diffs/code)."""
     resp = requests.get(
         f"https://api.github.com/repos/{GITHUB_USERNAME}/{repo_name}/commits",
         headers=HEADERS_GH,
@@ -50,13 +52,22 @@ def fetch_recent_commits(repo_name, count=10):
     )
     if resp.status_code != 200:
         return []
-    return resp.json()
+    commits = resp.json()
+    # SECURITY: Strip to only commit messages — never send code, patches, or file contents
+    return [
+        {"commit": {"message": c.get("commit", {}).get("message", "")}}
+        for c in commits
+        if isinstance(c, dict)
+    ]
 
 
 def build_repo_summary(repos):
     """Build a structured summary of repos and their tech stacks."""
     summaries = []
     for repo in repos[:20]:  # Top 20 most recently updated
+        # SECURITY: Double-check — skip any repo that isn't public
+        if repo.get("private"):
+            continue
         info = {
             "name": repo["name"],
             "description": repo.get("description") or "No description",
