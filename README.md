@@ -55,30 +55,13 @@
 ---
 
 <!--START_SECTION:ai-profile-->
-## 🔬 Latest Innovation
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/latest-innovation.svg" width="100%" alt="Latest Innovation"/>
+</div>
 
-*Auto-generated on March 26, 2026 by my Agentic Profile Bot* 🤖
-
-Most recent work:
-- **Acquiredshot** — My GitHub Profile README `Python`
-- **wolf-pak-website** — No description `TypeScript`
-- **wolf-pak-line-bot** — AI-powered LINE bot for Japanese SMEs: automated invoice processing with Freee/MoneyForward integration, PDF parsing, T-number verification, and legacy system modernization. Reduces invoice data entry from 5 minutes to 5 seconds. `accounting-automation, business-automation, freee-api`
-
-## 🧬 Skill DNA — Current Focus
-
-*Auto-generated on March 26, 2026 by my Agentic Profile Bot* 🤖
-
-**Python** ████░░░░░░ 36%
-
-**Java** ████░░░░░░ 36%
-
-**TypeScript** █░░░░░░░░░ 9%
-
-**JavaScript** ░░░░░░░░░░ 5%
-
-**Go** ░░░░░░░░░░ 5%
-
-
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/skill-dna.svg" width="100%" alt="Skill DNA"/>
+</div>
 <!--END_SECTION:ai-profile-->
 
 ---
