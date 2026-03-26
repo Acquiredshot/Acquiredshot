@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/coder-hero.svg" width="100%" alt="Coder Hero"/>
+  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/coder-hero.svg?v=2" width="100%" alt="Coder Hero"/>
 </div>
 
 ---
