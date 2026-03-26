@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="480" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="aboutHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a9fef7"/>
+      <stop offset="50%" style="stop-color:#bf91f3"/>
+      <stop offset="100%" style="stop-color:#70a5fd"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="100%;200%;100%" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="aboutBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a9fef7;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#bf91f3;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#70a5fd;stop-opacity:0.6"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="aboutScan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a9fef7;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#a9fef7;stop-opacity:0.06"/>
+      <stop offset="100%" style="stop-color:#a9fef7;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="iconGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a9fef7"/>
+      <stop offset="100%" style="stop-color:#38bdae"/>
+    </linearGradient>
+    <linearGradient id="iconGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bf91f3"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="iconGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#70a5fd"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="iconGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f7c177"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="iconGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7eb3"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <linearGradient id="iconGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#89e051"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" rx="16" fill="#0d1117"/>
+  <rect width="800" height="480" rx="16" fill="none" stroke="url(#aboutBorder)" stroke-width="2"/>
+
+  <!-- Scanning line -->
+  <rect x="0" y="0" width="800" height="80" fill="url(#aboutScan)" rx="16">
+    <animateTransform attributeName="transform" type="translate" values="0,-80;0,480" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Floating particles -->
+  <circle cx="720" cy="40" r="2" fill="#a9fef7" opacity="0.5">
+    <animate attributeName="cy" values="40;25;40" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="745" cy="60" r="1.5" fill="#bf91f3" opacity="0.5">
+    <animate attributeName="cy" values="60;45;60" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="765" cy="30" r="1" fill="#70a5fd" opacity="0.5">
+    <animate attributeName="cy" values="30;18;30" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0.9;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Title -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.1s" fill="freeze"/>
+    <text x="50" y="55" font-size="26" font-weight="bold" fill="url(#aboutHeaderGrad)" font-family="Segoe UI, Ubuntu, sans-serif" filter="url(#glow)">About Me</text>
+  </g>
+
+  <!-- Animated underline -->
+  <line x1="50" y1="70" x2="50" y2="70" stroke="url(#aboutHeaderGrad)" stroke-width="2" stroke-linecap="round">
+    <animate attributeName="x2" from="50" to="250" dur="1s" begin="0.3s" fill="freeze"/>
+  </line>
+
+  <!-- Row 1: Currently working on -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.4s" fill="freeze"/>
+    <rect x="30" y="95" width="740" height="48" rx="12" fill="#1a1b27" stroke="#38bdae" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="55" cy="119" r="8" fill="url(#iconGrad1)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="55" y="123" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">🔭</text>
+    <text x="75" y="115" font-size="13" font-weight="bold" fill="#a9fef7" font-family="Segoe UI, Ubuntu, sans-serif">Currently working on</text>
+    <text x="75" y="133" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">Completing my BSIT Capstone</text>
+  </g>
+
+  <!-- Row 2: Currently learning -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+    <rect x="30" y="155" width="740" height="48" rx="12" fill="#1a1b27" stroke="#7c3aed" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <circle cx="55" cy="179" r="8" fill="url(#iconGrad2)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <text x="55" y="183" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">🌱</text>
+    <text x="75" y="175" font-size="13" font-weight="bold" fill="#bf91f3" font-family="Segoe UI, Ubuntu, sans-serif">Currently learning</text>
+    <text x="75" y="193" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">Agentic AI System Engineering</text>
+  </g>
+
+  <!-- Row 3: Looking to collaborate -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.8s" fill="freeze"/>
+    <rect x="30" y="215" width="740" height="48" rx="12" fill="#1a1b27" stroke="#3b82f6" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <circle cx="55" cy="239" r="8" fill="url(#iconGrad3)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <text x="55" y="243" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">👯</text>
+    <text x="75" y="235" font-size="13" font-weight="bold" fill="#70a5fd" font-family="Segoe UI, Ubuntu, sans-serif">Looking to collaborate on</text>
+    <text x="75" y="253" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">AI Engineering</text>
+  </g>
+
+  <!-- Row 4: Ask me about -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.0s" fill="freeze"/>
+    <rect x="30" y="275" width="740" height="48" rx="12" fill="#1a1b27" stroke="#f59e0b" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <circle cx="55" cy="299" r="8" fill="url(#iconGrad4)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
+    <text x="55" y="303" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">💬</text>
+    <text x="75" y="295" font-size="13" font-weight="bold" fill="#f7c177" font-family="Segoe UI, Ubuntu, sans-serif">Ask me about</text>
+    <text x="75" y="313" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">Python Development</text>
+  </g>
+
+  <!-- Row 5: Reach me at -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.2s" fill="freeze"/>
+    <rect x="30" y="335" width="740" height="48" rx="12" fill="#1a1b27" stroke="#ec4899" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <circle cx="55" cy="359" r="8" fill="url(#iconGrad5)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <text x="55" y="363" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">📫</text>
+    <text x="75" y="355" font-size="13" font-weight="bold" fill="#ff7eb3" font-family="Segoe UI, Ubuntu, sans-serif">Reach me at</text>
+    <text x="75" y="373" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">CodyCodesIT@pak-innovations.net</text>
+  </g>
+
+  <!-- Row 6: Fun fact -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/>
+    <rect x="30" y="395" width="740" height="48" rx="12" fill="#1a1b27" stroke="#22c55e" stroke-width="1" opacity="0.6">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+    <circle cx="55" cy="419" r="8" fill="url(#iconGrad6)">
+      <animate attributeName="r" values="7;9;7" dur="2.5s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <text x="55" y="423" font-size="11" fill="#0d1117" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="middle">⚡</text>
+    <text x="75" y="415" font-size="13" font-weight="bold" fill="#89e051" font-family="Segoe UI, Ubuntu, sans-serif">Fun fact</text>
+    <text x="75" y="433" font-size="12" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">I graduated from the same high school Andre 3000 went to!</text>
+  </g>
+
+  <!-- Bottom glow line -->
+  <line x1="50" y1="460" x2="50" y2="460" stroke="url(#aboutHeaderGrad)" stroke-width="1" stroke-linecap="round" opacity="0.4">
+    <animate attributeName="x2" from="50" to="750" dur="2s" begin="1.6s" fill="freeze"/>
+  </line>
+</svg>

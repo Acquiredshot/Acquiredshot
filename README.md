@@ -17,40 +17,16 @@
 ## <img src="https://user-images.githubusercontent.com/74038190/216120981-b9507c36-0e04-4469-8e27-c99271b45ba5.png" width="30" /> About Me
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f15b36f63.gif" width="500">
-</div>
-
-<br>
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Currently working on:** Completing my BSIT Capstone
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Currently learning:** Agentic AI System Engineering
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Looking to collaborate on:** AI Engineering
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Ask me about:** Python Development
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Reach me at:** CodyCodesIT@pak-innovations.net
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="25"> **Fun fact:** I graduated from the same high school Andre 3000 went to!
-
-<br>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/about-me.svg" width="100%" alt="About Me"/>
 </div>
 
 ---
 
 ## 🛠️ Tech Stack
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,javascript,typescript,react,nodejs,html,css,git,github,vscode&perline=5" />
-</p>
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,mongodb,postgres,redis,nginx,linux,bash,vim&perline=5" />
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Acquiredshot/Acquiredshot/main/assets/tech-stack.svg" width="100%" alt="Tech Stack"/>
+</div>
 
 ---
 
