@@ -17,7 +17,7 @@
 ## 🚀 About Me
 
 - 🔭 I'm currently working on **Graduating with my Bachelors**
-- 🌱 I'm currently learning **Python, Java, & C**
+- 🌱 I'm currently learning **Agentic AI System Engineering**
 - 👯 I'm looking to collaborate on **Quantum Computing**
 - 💬 Ask me about **Python Development**
 - 📫 How to reach me: **CodyCodesIT@pak-innovations.net**
