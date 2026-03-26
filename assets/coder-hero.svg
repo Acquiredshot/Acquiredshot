@@ -5,376 +5,410 @@
       <stop offset="100%" style="stop-color:#161b22"/>
     </linearGradient>
     <linearGradient id="screenGlow1" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#70a5fd;stop-opacity:0.15"/>
+      <stop offset="0%" style="stop-color:#70a5fd;stop-opacity:0.2"/>
       <stop offset="100%" style="stop-color:#70a5fd;stop-opacity:0"/>
     </linearGradient>
     <linearGradient id="screenGlow2" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#bf91f3;stop-opacity:0.15"/>
+      <stop offset="0%" style="stop-color:#bf91f3;stop-opacity:0.2"/>
       <stop offset="100%" style="stop-color:#bf91f3;stop-opacity:0"/>
     </linearGradient>
     <linearGradient id="screenGlow3" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#a9fef7;stop-opacity:0.15"/>
+      <stop offset="0%" style="stop-color:#a9fef7;stop-opacity:0.2"/>
       <stop offset="100%" style="stop-color:#a9fef7;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#c68642"/>
+      <stop offset="100%" style="stop-color:#b5651d"/>
+    </linearGradient>
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b27"/>
+      <stop offset="100%" style="stop-color:#13141c"/>
     </linearGradient>
     <linearGradient id="deskGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" style="stop-color:#1a1b27;stop-opacity:0"/>
-      <stop offset="30%" style="stop-color:#1a1b27"/>
-      <stop offset="70%" style="stop-color:#1a1b27"/>
+      <stop offset="20%" style="stop-color:#1a1b27"/>
+      <stop offset="80%" style="stop-color:#1a1b27"/>
       <stop offset="100%" style="stop-color:#1a1b27;stop-opacity:0"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="screenLight">
-      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feGaussianBlur stdDeviation="20" result="blur"/>
       <feMerge><feMergeNode in="blur"/></feMerge>
     </filter>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+    <!-- Anime eye shine -->
+    <radialGradient id="eyeShine" cx="35%" cy="35%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
+    </radialGradient>
   </defs>
 
   <!-- Background -->
   <rect width="800" height="450" fill="url(#bgGrad)"/>
 
-  <!-- Ambient light from screens (behind character) -->
-  <ellipse cx="400" cy="250" rx="300" ry="180" fill="#70a5fd" opacity="0.03" filter="url(#screenLight)">
-    <animate attributeName="opacity" values="0.02;0.05;0.02" dur="4s" repeatCount="indefinite"/>
+  <!-- Ambient screen light cast -->
+  <ellipse cx="400" cy="280" rx="350" ry="150" fill="#70a5fd" opacity="0.025" filter="url(#screenLight)">
+    <animate attributeName="opacity" values="0.02;0.04;0.02" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+  <ellipse cx="400" cy="270" rx="200" ry="100" fill="#bf91f3" opacity="0.02" filter="url(#screenLight)">
+    <animate attributeName="opacity" values="0.015;0.035;0.015" dur="3.5s" repeatCount="indefinite"/>
   </ellipse>
 
-  <!-- === LEFT MONITOR === -->
+  <!-- ===== LEFT MONITOR ===== -->
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.2s" fill="freeze"/>
-    <!-- Monitor body -->
-    <rect x="80" y="100" width="200" height="140" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-    <!-- Screen -->
-    <rect x="88" y="108" width="184" height="116" rx="4" fill="#161b22"/>
-    <!-- Screen glow -->
-    <rect x="88" y="108" width="184" height="116" rx="4" fill="url(#screenGlow1)" opacity="0.5">
+    <rect x="75" y="95" width="210" height="148" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="83" y="103" width="194" height="124" rx="3" fill="#161b22"/>
+    <rect x="83" y="103" width="194" height="124" rx="3" fill="url(#screenGlow1)" opacity="0.4">
       <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
     </rect>
-    <!-- Code lines on left screen -->
-    <rect x="98" y="120" width="50" height="3" rx="1" fill="#bf91f3" opacity="0.7">
-      <animate attributeName="width" values="50;65;50" dur="4s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="98" y="128" width="80" height="3" rx="1" fill="#70a5fd" opacity="0.5"/>
-    <rect x="108" y="136" width="60" height="3" rx="1" fill="#a9fef7" opacity="0.6">
-      <animate attributeName="width" values="60;45;60" dur="3s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="108" y="144" width="40" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
-    <rect x="98" y="152" width="70" height="3" rx="1" fill="#bf91f3" opacity="0.5">
-      <animate attributeName="width" values="70;55;70" dur="3.5s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="108" y="160" width="55" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
-    <rect x="98" y="168" width="90" height="3" rx="1" fill="#70a5fd" opacity="0.6">
-      <animate attributeName="width" values="90;75;90" dur="4.5s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="108" y="176" width="35" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
-    <rect x="98" y="184" width="65" height="3" rx="1" fill="#bf91f3" opacity="0.5"/>
-    <rect x="98" y="192" width="50" height="3" rx="1" fill="#a9fef7" opacity="0.4">
-      <animate attributeName="width" values="50;70;50" dur="3.8s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="98" y="200" width="80" height="3" rx="1" fill="#70a5fd" opacity="0.3"/>
-    <rect x="98" y="208" width="40" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
-    <!-- Cursor blink -->
-    <rect x="148" y="120" width="2" height="8" fill="#a9fef7">
-      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-    </rect>
-    <!-- Monitor stand -->
-    <rect x="165" y="240" width="30" height="20" fill="#30363d"/>
-    <rect x="145" y="258" width="70" height="5" rx="2" fill="#30363d"/>
+    <!-- Code lines -->
+    <rect x="93" y="114" width="55" height="3" rx="1" fill="#bf91f3" opacity="0.8"><animate attributeName="width" values="55;70;55" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="93" y="122" width="85" height="3" rx="1" fill="#70a5fd" opacity="0.5"/>
+    <rect x="103" y="130" width="65" height="3" rx="1" fill="#a9fef7" opacity="0.6"><animate attributeName="width" values="65;50;65" dur="3s" repeatCount="indefinite"/></rect>
+    <rect x="103" y="138" width="45" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
+    <rect x="93" y="146" width="75" height="3" rx="1" fill="#bf91f3" opacity="0.5"><animate attributeName="width" values="75;60;75" dur="3.5s" repeatCount="indefinite"/></rect>
+    <rect x="103" y="154" width="55" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
+    <rect x="93" y="162" width="95" height="3" rx="1" fill="#70a5fd" opacity="0.6"><animate attributeName="width" values="95;78;95" dur="4.5s" repeatCount="indefinite"/></rect>
+    <rect x="103" y="170" width="38" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
+    <rect x="93" y="178" width="70" height="3" rx="1" fill="#bf91f3" opacity="0.5"/>
+    <rect x="93" y="186" width="55" height="3" rx="1" fill="#a9fef7" opacity="0.4"><animate attributeName="width" values="55;72;55" dur="3.8s" repeatCount="indefinite"/></rect>
+    <rect x="93" y="194" width="82" height="3" rx="1" fill="#70a5fd" opacity="0.3"/>
+    <rect x="93" y="202" width="42" height="3" rx="1" fill="#c0caf5" opacity="0.4"/>
+    <rect x="93" y="210" width="60" height="3" rx="1" fill="#bf91f3" opacity="0.3"/>
+    <!-- Cursor -->
+    <rect x="148" y="114" width="2" height="7" fill="#a9fef7"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    <!-- Stand -->
+    <rect x="167" y="243" width="26" height="18" fill="#30363d"/>
+    <rect x="150" y="259" width="60" height="4" rx="2" fill="#30363d"/>
   </g>
 
-  <!-- === CENTER MONITOR (larger, main) === -->
+  <!-- ===== CENTER MONITOR (main, larger) ===== -->
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.1s" fill="freeze"/>
-    <rect x="310" y="70" width="230" height="160" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-    <rect x="318" y="78" width="214" height="144" rx="4" fill="#161b22"/>
-    <rect x="318" y="78" width="214" height="144" rx="4" fill="url(#screenGlow2)" opacity="0.5">
+    <rect x="308" y="62" width="234" height="168" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="316" y="70" width="218" height="150" rx="3" fill="#161b22"/>
+    <rect x="316" y="70" width="218" height="150" rx="3" fill="url(#screenGlow2)" opacity="0.4">
       <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/>
     </rect>
     <!-- Code on center screen -->
-    <rect x="328" y="92" width="70" height="3" rx="1" fill="#bf91f3" opacity="0.8"/>
-    <rect x="328" y="100" width="100" height="3" rx="1" fill="#a9fef7" opacity="0.6">
-      <animate attributeName="width" values="100;120;100" dur="4s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="338" y="108" width="80" height="3" rx="1" fill="#70a5fd" opacity="0.7"/>
-    <rect x="348" y="116" width="55" height="3" rx="1" fill="#c0caf5" opacity="0.5">
-      <animate attributeName="width" values="55;70;55" dur="3.2s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="348" y="124" width="70" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
-    <rect x="338" y="132" width="90" height="3" rx="1" fill="#bf91f3" opacity="0.6">
-      <animate attributeName="width" values="90;75;90" dur="3.8s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="328" y="140" width="60" height="3" rx="1" fill="#70a5fd" opacity="0.5"/>
-    <rect x="338" y="148" width="45" height="3" rx="1" fill="#c0caf5" opacity="0.4">
-      <animate attributeName="width" values="45;60;45" dur="4.2s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="328" y="156" width="80" height="3" rx="1" fill="#a9fef7" opacity="0.6"/>
-    <rect x="338" y="164" width="50" height="3" rx="1" fill="#bf91f3" opacity="0.5"/>
-    <rect x="328" y="172" width="110" height="3" rx="1" fill="#70a5fd" opacity="0.4">
-      <animate attributeName="width" values="110;90;110" dur="3.5s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="338" y="180" width="65" height="3" rx="1" fill="#c0caf5" opacity="0.3"/>
-    <rect x="328" y="188" width="75" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
-    <rect x="328" y="196" width="95" height="3" rx="1" fill="#bf91f3" opacity="0.4">
-      <animate attributeName="width" values="95;80;95" dur="4.5s" repeatCount="indefinite"/>
-    </rect>
-    <rect x="328" y="204" width="55" height="3" rx="1" fill="#70a5fd" opacity="0.3"/>
-    <!-- Cursor blink on center -->
-    <rect x="398" y="100" width="2" height="8" fill="#a9fef7">
-      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
-    </rect>
-    <!-- Monitor stand -->
-    <rect x="410" y="230" width="30" height="25" fill="#30363d"/>
-    <rect x="390" y="253" width="70" height="5" rx="2" fill="#30363d"/>
+    <rect x="326" y="84" width="72" height="3" rx="1" fill="#bf91f3" opacity="0.8"/>
+    <rect x="326" y="92" width="105" height="3" rx="1" fill="#a9fef7" opacity="0.6"><animate attributeName="width" values="105;125;105" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="336" y="100" width="85" height="3" rx="1" fill="#70a5fd" opacity="0.7"/>
+    <rect x="346" y="108" width="58" height="3" rx="1" fill="#c0caf5" opacity="0.5"><animate attributeName="width" values="58;72;58" dur="3.2s" repeatCount="indefinite"/></rect>
+    <rect x="346" y="116" width="72" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
+    <rect x="336" y="124" width="95" height="3" rx="1" fill="#bf91f3" opacity="0.6"><animate attributeName="width" values="95;78;95" dur="3.8s" repeatCount="indefinite"/></rect>
+    <rect x="326" y="132" width="62" height="3" rx="1" fill="#70a5fd" opacity="0.5"/>
+    <rect x="336" y="140" width="48" height="3" rx="1" fill="#c0caf5" opacity="0.4"><animate attributeName="width" values="48;62;48" dur="4.2s" repeatCount="indefinite"/></rect>
+    <rect x="326" y="148" width="82" height="3" rx="1" fill="#a9fef7" opacity="0.6"/>
+    <rect x="336" y="156" width="52" height="3" rx="1" fill="#bf91f3" opacity="0.5"/>
+    <rect x="326" y="164" width="115" height="3" rx="1" fill="#70a5fd" opacity="0.4"><animate attributeName="width" values="115;95;115" dur="3.5s" repeatCount="indefinite"/></rect>
+    <rect x="336" y="172" width="68" height="3" rx="1" fill="#c0caf5" opacity="0.3"/>
+    <rect x="326" y="180" width="78" height="3" rx="1" fill="#a9fef7" opacity="0.5"/>
+    <rect x="326" y="188" width="98" height="3" rx="1" fill="#bf91f3" opacity="0.4"><animate attributeName="width" values="98;82;98" dur="4.5s" repeatCount="indefinite"/></rect>
+    <rect x="326" y="196" width="58" height="3" rx="1" fill="#70a5fd" opacity="0.3"/>
+    <rect x="326" y="204" width="42" height="3" rx="1" fill="#c0caf5" opacity="0.3"/>
+    <!-- Cursor -->
+    <rect x="431" y="92" width="2" height="7" fill="#a9fef7"><animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/></rect>
+    <!-- Stand -->
+    <rect x="412" y="230" width="26" height="22" fill="#30363d"/>
+    <rect x="395" y="250" width="60" height="4" rx="2" fill="#30363d"/>
   </g>
 
-  <!-- === RIGHT MONITOR === -->
+  <!-- ===== RIGHT MONITOR ===== -->
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="0.3s" fill="freeze"/>
-    <rect x="570" y="100" width="200" height="140" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="2"/>
-    <rect x="578" y="108" width="184" height="116" rx="4" fill="#161b22"/>
-    <rect x="578" y="108" width="184" height="116" rx="4" fill="url(#screenGlow3)" opacity="0.5">
+    <rect x="565" y="95" width="210" height="148" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1.5" filter="url(#shadow)"/>
+    <rect x="573" y="103" width="194" height="124" rx="3" fill="#161b22"/>
+    <rect x="573" y="103" width="194" height="124" rx="3" fill="url(#screenGlow3)" opacity="0.4">
       <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.8s" repeatCount="indefinite"/>
     </rect>
-    <!-- Terminal-style content on right screen -->
-    <text x="588" y="124" font-size="7" fill="#a9fef7" opacity="0.8" font-family="monospace">$ git push origin main</text>
-    <text x="588" y="134" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Enumerating objects: 12</text>
-    <text x="588" y="144" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Writing objects: 100%</text>
-    <text x="588" y="154" font-size="7" fill="#70a5fd" opacity="0.6" font-family="monospace">remote: Resolving...</text>
-    <text x="588" y="164" font-size="7" fill="#a9fef7" opacity="0.7" font-family="monospace">To github.com:repo.git</text>
-    <text x="588" y="174" font-size="7" fill="#bf91f3" opacity="0.6" font-family="monospace">   abc123..def456 main</text>
-    <text x="588" y="184" font-size="7" fill="#a9fef7" opacity="0.8" font-family="monospace">$ python agent.py</text>
-    <text x="588" y="194" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Scanning repos...</text>
-    <text x="588" y="204" font-size="7" fill="#a9fef7" opacity="0.4" font-family="monospace">$ _<animate attributeName="opacity" values="0.6;0;0.6" dur="1s" repeatCount="indefinite"/></text>
-    <!-- Monitor stand -->
-    <rect x="655" y="240" width="30" height="20" fill="#30363d"/>
-    <rect x="635" y="258" width="70" height="5" rx="2" fill="#30363d"/>
+    <!-- Terminal content -->
+    <text x="583" y="118" font-size="7" fill="#a9fef7" opacity="0.8" font-family="monospace">$ git push origin main</text>
+    <text x="583" y="128" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Enumerating objects: 12</text>
+    <text x="583" y="138" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Writing objects: 100%</text>
+    <text x="583" y="148" font-size="7" fill="#70a5fd" opacity="0.6" font-family="monospace">remote: Resolving deltas</text>
+    <text x="583" y="158" font-size="7" fill="#a9fef7" opacity="0.7" font-family="monospace">To github.com:repo.git</text>
+    <text x="583" y="168" font-size="7" fill="#bf91f3" opacity="0.6" font-family="monospace">   abc123..def456 main</text>
+    <text x="583" y="178" font-size="7" fill="#a9fef7" opacity="0.8" font-family="monospace">$ python agent.py</text>
+    <text x="583" y="188" font-size="7" fill="#c0caf5" opacity="0.5" font-family="monospace">Scanning repos...</text>
+    <text x="583" y="198" font-size="7" fill="#a9fef7" opacity="0.4" font-family="monospace">Generating SVGs...</text>
+    <text x="583" y="208" font-size="7" fill="#a9fef7" opacity="0.6" font-family="monospace">$ _<animate attributeName="opacity" values="0.7;0;0.7" dur="1s" repeatCount="indefinite"/></text>
+    <!-- Stand -->
+    <rect x="657" y="243" width="26" height="18" fill="#30363d"/>
+    <rect x="640" y="259" width="60" height="4" rx="2" fill="#30363d"/>
   </g>
 
   <!-- Desk surface -->
-  <rect x="50" y="262" width="700" height="6" rx="3" fill="url(#deskGrad)"/>
+  <rect x="40" y="262" width="720" height="5" rx="2" fill="url(#deskGrad)"/>
 
-  <!-- === CHARACTER (guy with dreads) === -->
+  <!-- ===== ANIME CHARACTER ===== -->
   <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" begin="0.4s" fill="freeze"/>
 
-    <!-- Chair back -->
-    <rect x="370" y="290" width="60" height="80" rx="8" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
+    <!-- Gaming chair -->
+    <path d="M362,295 Q360,280 365,270 L435,270 Q440,280 438,295 L440,385 Q440,395 430,395 L370,395 Q360,395 360,385 Z" fill="#1a1b27" stroke="#bf91f3" stroke-width="1" opacity="0.6"/>
+    <path d="M368,275 L432,275 L435,282 L365,282 Z" fill="#bf91f3" opacity="0.15"/>
+    <!-- Chair wing accents -->
+    <line x1="365" y1="280" x2="362" y2="310" stroke="#bf91f3" stroke-width="1" opacity="0.3"/>
+    <line x1="435" y1="280" x2="438" y2="310" stroke="#bf91f3" stroke-width="1" opacity="0.3"/>
 
-    <!-- Body / hoodie -->
-    <path d="M375,340 Q375,310 400,300 Q425,310 425,340 L425,370 L375,370 Z" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
-    <!-- Hoodie detail -->
-    <line x1="400" y1="305" x2="400" y2="345" stroke="#30363d" stroke-width="0.5" opacity="0.5"/>
+    <!-- === BODY (hoodie) === -->
+    <path d="M370,330 Q368,305 400,292 Q432,305 430,330 L432,375 L368,375 Z" fill="url(#hoodieGrad)" stroke="#30363d" stroke-width="1"/>
+    <!-- Hoodie center line -->
+    <line x1="400" y1="298" x2="400" y2="365" stroke="#30363d" stroke-width="0.8" opacity="0.4"/>
+    <!-- Hoodie collar / neckline -->
+    <path d="M388,296 Q400,304 412,296" fill="none" stroke="#30363d" stroke-width="1" opacity="0.5"/>
+    <!-- Hoodie pocket -->
+    <path d="M385,345 L415,345 L415,365 L385,365" fill="none" stroke="#30363d" stroke-width="0.5" opacity="0.3"/>
+    <!-- Wolf-Pak logo on hoodie (small) -->
+    <text x="392" y="338" font-size="6" fill="#bf91f3" font-family="Segoe UI, sans-serif" opacity="0.4">W-P</text>
 
-    <!-- Shoulders -->
-    <ellipse cx="370" cy="325" rx="15" ry="8" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
-    <ellipse cx="430" cy="325" rx="15" ry="8" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
+    <!-- Shoulders (broader, anime style) -->
+    <ellipse cx="365" cy="316" rx="18" ry="10" fill="url(#hoodieGrad)" stroke="#30363d" stroke-width="1"/>
+    <ellipse cx="435" cy="316" rx="18" ry="10" fill="url(#hoodieGrad)" stroke="#30363d" stroke-width="1"/>
 
-    <!-- Arms reaching to keyboard area -->
-    <path d="M358,330 Q340,350 350,365" fill="none" stroke="#30363d" stroke-width="3" stroke-linecap="round"/>
-    <path d="M442,330 Q460,350 450,365" fill="none" stroke="#30363d" stroke-width="3" stroke-linecap="round"/>
+    <!-- Arms to desk -->
+    <path d="M350,322 Q335,345 342,262" fill="none" stroke="#1a1b27" stroke-width="14" stroke-linecap="round"/>
+    <path d="M450,322 Q465,345 458,262" fill="none" stroke="#1a1b27" stroke-width="14" stroke-linecap="round"/>
+    <!-- Arm outlines -->
+    <path d="M350,322 Q335,345 342,262" fill="none" stroke="#30363d" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+    <path d="M450,322 Q465,345 458,262" fill="none" stroke="#30363d" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
 
-    <!-- Hands on desk -->
-    <ellipse cx="350" cy="268" rx="8" ry="4" fill="#8b6914" opacity="0.8"/>
-    <ellipse cx="450" cy="268" rx="8" ry="4" fill="#8b6914" opacity="0.8"/>
+    <!-- Hands (anime style - simplified, expressive) -->
+    <ellipse cx="342" cy="260" rx="10" ry="5" fill="url(#skinGrad)"/>
+    <ellipse cx="458" cy="260" rx="10" ry="5" fill="url(#skinGrad)"/>
+    <!-- Finger details -->
+    <path d="M334,258 Q332,255 334,253" fill="none" stroke="#b5651d" stroke-width="0.8" opacity="0.4"/>
+    <path d="M338,257 Q336,254 338,252" fill="none" stroke="#b5651d" stroke-width="0.8" opacity="0.4"/>
+    <path d="M462,258 Q464,255 462,253" fill="none" stroke="#b5651d" stroke-width="0.8" opacity="0.4"/>
+    <path d="M466,257 Q468,254 466,252" fill="none" stroke="#b5651d" stroke-width="0.8" opacity="0.4"/>
 
     <!-- Neck -->
-    <rect x="393" y="285" width="14" height="16" rx="3" fill="#a0762c"/>
+    <rect x="392" y="280" width="16" height="16" rx="4" fill="url(#skinGrad)"/>
 
-    <!-- Head -->
-    <ellipse cx="400" cy="274" rx="22" ry="24" fill="#a0762c"/>
+    <!-- === HEAD (anime proportions - larger, rounder) === -->
+    <ellipse cx="400" cy="262" rx="30" ry="32" fill="url(#skinGrad)"/>
 
-    <!-- Headphones band -->
-    <path d="M378,260 Q400,242 422,260" fill="none" stroke="#444" stroke-width="4" stroke-linecap="round"/>
+    <!-- Jaw/chin definition (anime angular) -->
+    <path d="M374,270 Q380,296 400,300 Q420,296 426,270" fill="url(#skinGrad)" stroke="none"/>
+
+    <!-- === LOCS/DREADS (anime styled - thicker, flowing) === -->
+    <!-- Back locs (behind head, longer) -->
+    <path d="M374,248 Q365,218 370,195 Q373,180 368,165" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M374,248 Q365,218 370,195 Q373,180 368,165;M374,248 Q366,220 371,197 Q374,182 369,167;M374,248 Q365,218 370,195 Q373,180 368,165" dur="5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M382,244 Q372,210 378,185 Q382,170 376,155" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M382,244 Q372,210 378,185 Q382,170 376,155;M382,244 Q373,212 379,187 Q383,172 377,157;M382,244 Q372,210 378,185 Q382,170 376,155" dur="4.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M418,244 Q428,210 422,185 Q418,170 424,155" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M418,244 Q428,210 422,185 Q418,170 424,155;M418,244 Q427,212 421,187 Q417,172 423,157;M418,244 Q428,210 422,185 Q418,170 424,155" dur="4.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M426,248 Q435,218 430,195 Q427,180 432,165" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M426,248 Q435,218 430,195 Q427,180 432,165;M426,248 Q434,220 429,197 Q426,182 431,167;M426,248 Q435,218 430,195 Q427,180 432,165" dur="5.2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Top locs (swept up) -->
+    <path d="M388,234 Q380,210 385,190 Q388,175 383,160" fill="none" stroke="url(#hairGrad)" stroke-width="8" stroke-linecap="round">
+      <animate attributeName="d" values="M388,234 Q380,210 385,190 Q388,175 383,160;M388,234 Q381,212 386,192 Q389,177 384,162;M388,234 Q380,210 385,190 Q388,175 383,160" dur="4.2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400,232 Q398,205 402,185 Q405,170 400,152" fill="none" stroke="url(#hairGrad)" stroke-width="8" stroke-linecap="round">
+      <animate attributeName="d" values="M400,232 Q398,205 402,185 Q405,170 400,152;M400,232 Q399,207 403,187 Q406,172 401,154;M400,232 Q398,205 402,185 Q405,170 400,152" dur="3.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M412,234 Q420,210 415,190 Q412,175 417,160" fill="none" stroke="url(#hairGrad)" stroke-width="8" stroke-linecap="round">
+      <animate attributeName="d" values="M412,234 Q420,210 415,190 Q412,175 417,160;M412,234 Q419,212 414,192 Q411,177 416,162;M412,234 Q420,210 415,190 Q412,175 417,160" dur="4.6s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Side locs (framing face) -->
+    <path d="M372,258 Q355,275 348,300 Q345,318 350,335" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M372,258 Q355,275 348,300 Q345,318 350,335;M372,258 Q356,277 349,302 Q346,320 351,337;M372,258 Q355,275 348,300 Q345,318 350,335" dur="5.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M370,252 Q350,262 340,285 Q336,302 340,322" fill="none" stroke="url(#hairGrad)" stroke-width="6" stroke-linecap="round">
+      <animate attributeName="d" values="M370,252 Q350,262 340,285 Q336,302 340,322;M370,252 Q351,264 341,287 Q337,304 341,324;M370,252 Q350,262 340,285 Q336,302 340,322" dur="4.8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M428,258 Q445,275 452,300 Q455,318 450,335" fill="none" stroke="url(#hairGrad)" stroke-width="7" stroke-linecap="round">
+      <animate attributeName="d" values="M428,258 Q445,275 452,300 Q455,318 450,335;M428,258 Q444,277 451,302 Q454,320 449,337;M428,258 Q445,275 452,300 Q455,318 450,335" dur="5.3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M430,252 Q450,262 460,285 Q464,302 460,322" fill="none" stroke="url(#hairGrad)" stroke-width="6" stroke-linecap="round">
+      <animate attributeName="d" values="M430,252 Q450,262 460,285 Q464,302 460,322;M430,252 Q449,264 459,287 Q463,304 459,324;M430,252 Q450,262 460,285 Q464,302 460,322" dur="5s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Loc highlights (anime shine) -->
+    <path d="M388,234 Q380,210 385,190" fill="none" stroke="#2a2a4a" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <path d="M400,232 Q398,205 402,185" fill="none" stroke="#2a2a4a" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <path d="M412,234 Q420,210 415,190" fill="none" stroke="#2a2a4a" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+    <path d="M372,258 Q355,275 348,300" fill="none" stroke="#2a2a4a" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+    <path d="M428,258 Q445,275 452,300" fill="none" stroke="#2a2a4a" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+
+    <!-- Hair top mass -->
+    <ellipse cx="400" cy="238" rx="32" ry="12" fill="url(#hairGrad)"/>
+
+    <!-- === ANIME EYES (large, expressive) === -->
+    <!-- Left eye -->
+    <ellipse cx="389" cy="264" rx="7" ry="8" fill="#1a1b27"/>
+    <!-- Iris -->
+    <ellipse cx="390" cy="265" rx="5" ry="6" fill="#4a3728"/>
+    <!-- Pupil -->
+    <circle cx="391" cy="265" r="3" fill="#1a1b27"/>
+    <!-- Screen reflection (anime eye highlight - big) -->
+    <circle cx="392" cy="262" r="2.5" fill="#fff" opacity="0.9"/>
+    <!-- Second smaller highlight -->
+    <circle cx="388" cy="267" r="1" fill="#fff" opacity="0.6"/>
+    <!-- Blue screen glow in eye -->
+    <circle cx="391" cy="264" r="1.5" fill="#70a5fd" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Right eye -->
+    <ellipse cx="411" cy="264" rx="7" ry="8" fill="#1a1b27"/>
+    <ellipse cx="412" cy="265" rx="5" ry="6" fill="#4a3728"/>
+    <circle cx="413" cy="265" r="3" fill="#1a1b27"/>
+    <circle cx="414" cy="262" r="2.5" fill="#fff" opacity="0.9"/>
+    <circle cx="410" cy="267" r="1" fill="#fff" opacity="0.6"/>
+    <circle cx="413" cy="264" r="1.5" fill="#70a5fd" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Eyebrows (anime - sharp, expressive, focused) -->
+    <path d="M380,254 Q389,250 397,253" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M403,253 Q411,250 420,254" fill="none" stroke="#1a1a2e" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Nose (anime minimal) -->
+    <path d="M399,272 L398,276" fill="none" stroke="#a0762c" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- Mouth (confident smirk) -->
+    <path d="M393,282 Q400,287 407,283" fill="none" stroke="#8b5e34" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Facial shadow (anime cel-shade style) -->
+    <path d="M374,270 Q380,276 390,272" fill="#b5651d" opacity="0.15"/>
+    <path d="M426,270 Q420,276 410,272" fill="#b5651d" opacity="0.15"/>
+
+    <!-- Headphones -->
+    <path d="M372,252 Q400,230 428,252" fill="none" stroke="#333" stroke-width="5" stroke-linecap="round"/>
     <!-- Left ear cup -->
-    <ellipse cx="376" cy="268" rx="8" ry="10" fill="#333" stroke="#555" stroke-width="1"/>
-    <ellipse cx="376" cy="268" rx="5" ry="7" fill="#222"/>
+    <ellipse cx="370" cy="264" rx="10" ry="12" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+    <ellipse cx="370" cy="264" rx="6" ry="8" fill="#1a1a1a"/>
+    <circle cx="370" cy="264" r="3" fill="#bf91f3" opacity="0.2"/>
     <!-- Right ear cup -->
-    <ellipse cx="424" cy="268" rx="8" ry="10" fill="#333" stroke="#555" stroke-width="1"/>
-    <ellipse cx="424" cy="268" rx="5" ry="7" fill="#222"/>
-
-    <!-- Face features -->
-    <!-- Eyes (looking at center screen) -->
-    <ellipse cx="393" cy="271" rx="3" ry="2.5" fill="#1a1b27"/>
-    <ellipse cx="407" cy="271" rx="3" ry="2.5" fill="#1a1b27"/>
-    <circle cx="394" cy="271" r="1" fill="#c0caf5"/>
-    <circle cx="408" cy="271" r="1" fill="#c0caf5"/>
-    <!-- Screen reflection in eyes -->
-    <circle cx="394" cy="270" r="0.5" fill="#70a5fd">
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    <ellipse cx="430" cy="264" rx="10" ry="12" fill="#2a2a2a" stroke="#444" stroke-width="1"/>
+    <ellipse cx="430" cy="264" rx="6" ry="8" fill="#1a1a1a"/>
+    <circle cx="430" cy="264" r="3" fill="#bf91f3" opacity="0.2"/>
+    <!-- Headphone LED glow -->
+    <circle cx="370" cy="264" r="2" fill="#bf91f3" opacity="0.3">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="408" cy="270" r="0.5" fill="#70a5fd">
-      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    <circle cx="430" cy="264" r="2" fill="#bf91f3" opacity="0.3">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite" begin="1s"/>
     </circle>
-    <!-- Subtle smile -->
-    <path d="M394,280 Q400,284 406,280" fill="none" stroke="#1a1b27" stroke-width="1.2" stroke-linecap="round"/>
-    <!-- Nose -->
-    <path d="M400,273 L398,278 L402,278" fill="none" stroke="#8b6914" stroke-width="0.8" opacity="0.5"/>
-
-    <!-- === DREADLOCKS === -->
-    <!-- Back dreads (behind head) -->
-    <path d="M380,255 Q375,230 370,215 Q368,205 372,200" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M380,255 Q375,230 370,215 Q368,205 372,200;M380,255 Q376,232 371,216 Q369,206 373,201;M380,255 Q375,230 370,215 Q368,205 372,200" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M385,252 Q378,225 382,205 Q384,195 380,188" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M385,252 Q378,225 382,205 Q384,195 380,188;M385,252 Q379,226 383,206 Q385,196 381,189;M385,252 Q378,225 382,205 Q384,195 380,188" dur="4.5s" repeatCount="indefinite"/>
-    </path>
-    <path d="M415,252 Q422,225 418,205 Q416,195 420,188" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M415,252 Q422,225 418,205 Q416,195 420,188;M415,252 Q421,226 417,206 Q415,196 419,189;M415,252 Q422,225 418,205 Q416,195 420,188" dur="4.3s" repeatCount="indefinite"/>
-    </path>
-    <path d="M420,255 Q425,230 430,215 Q432,205 428,200" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M420,255 Q425,230 430,215 Q432,205 428,200;M420,255 Q424,232 429,216 Q431,206 427,201;M420,255 Q425,230 430,215 Q432,205 428,200" dur="3.8s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Side dreads -->
-    <path d="M378,262 Q365,275 358,295 Q355,308 360,318" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M378,262 Q365,275 358,295 Q355,308 360,318;M378,262 Q366,276 359,296 Q356,309 361,319;M378,262 Q365,275 358,295 Q355,308 360,318" dur="5s" repeatCount="indefinite"/>
-    </path>
-    <path d="M377,258 Q360,268 352,285 Q348,298 352,312" fill="none" stroke="#1a1a2e" stroke-width="4.5" stroke-linecap="round">
-      <animate attributeName="d" values="M377,258 Q360,268 352,285 Q348,298 352,312;M377,258 Q361,269 353,286 Q349,299 353,313;M377,258 Q360,268 352,285 Q348,298 352,312" dur="4.7s" repeatCount="indefinite"/>
-    </path>
-    <path d="M422,262 Q435,275 442,295 Q445,308 440,318" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M422,262 Q435,275 442,295 Q445,308 440,318;M422,262 Q434,276 441,296 Q444,309 439,319;M422,262 Q435,275 442,295 Q445,308 440,318" dur="4.6s" repeatCount="indefinite"/>
-    </path>
-    <path d="M423,258 Q440,268 448,285 Q452,298 448,312" fill="none" stroke="#1a1a2e" stroke-width="4.5" stroke-linecap="round">
-      <animate attributeName="d" values="M423,258 Q440,268 448,285 Q452,298 448,312;M423,258 Q439,269 447,286 Q451,299 447,313;M423,258 Q440,268 448,285 Q452,298 448,312" dur="5.2s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Top dreads -->
-    <path d="M390,252 Q385,235 390,218 Q393,208 388,195" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M390,252 Q385,235 390,218 Q393,208 388,195;M390,252 Q386,236 391,219 Q394,209 389,196;M390,252 Q385,235 390,218 Q393,208 388,195" dur="4.2s" repeatCount="indefinite"/>
-    </path>
-    <path d="M400,250 Q400,232 395,215 Q392,205 396,192" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M400,250 Q400,232 395,215 Q392,205 396,192;M400,250 Q401,233 396,216 Q393,206 397,193;M400,250 Q400,232 395,215 Q392,205 396,192" dur="3.6s" repeatCount="indefinite"/>
-    </path>
-    <path d="M410,252 Q415,235 410,218 Q407,208 412,195" fill="none" stroke="#1a1a2e" stroke-width="5" stroke-linecap="round">
-      <animate attributeName="d" values="M410,252 Q415,235 410,218 Q407,208 412,195;M410,252 Q414,236 409,219 Q406,209 411,196;M410,252 Q415,235 410,218 Q407,208 412,195" dur="4.4s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Dread highlights -->
-    <path d="M390,252 Q385,235 390,218" fill="none" stroke="#2d2d4e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-    <path d="M410,252 Q415,235 410,218" fill="none" stroke="#2d2d4e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-    <path d="M378,262 Q365,275 358,295" fill="none" stroke="#2d2d4e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
-    <path d="M422,262 Q435,275 442,295" fill="none" stroke="#2d2d4e" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
   </g>
 
-  <!-- === FLOATING CODE SYMBOLS === -->
-  <!-- Left floating code -->
+  <!-- ===== KEYBOARD ===== -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.6s" fill="freeze"/>
+    <rect x="362" y="265" width="76" height="20" rx="3" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
+    <g opacity="0.5">
+      <rect x="367" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="373" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="379" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="385" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="391" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="397" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="403" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="409" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="415" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="421" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="427" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="369" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="375" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="381" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="387" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="393" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="399" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="405" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="411" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="417" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="423" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
+      <rect x="380" y="278" width="40" height="3" rx="0.5" fill="#30363d"/>
+    </g>
+    <!-- Typing highlight key -->
+    <rect x="393" y="273" width="4" height="3" rx="0.5" fill="#a9fef7" opacity="0.4">
+      <animate attributeName="x" values="393;381;405;387;399;411;393" dur="0.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.5;0.1;0.5;0.1;0.5" dur="0.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ===== FLOATING CODE (ambient, all around) ===== -->
   <g opacity="0" filter="url(#glow)">
-    <animate attributeName="opacity" from="0" to="0.7" dur="1s" begin="1s" fill="freeze"/>
-    <text x="40" y="60" font-size="11" fill="#bf91f3" font-family="monospace" opacity="0.5">
-      <animate attributeName="y" values="60;55;60" dur="4s" repeatCount="indefinite"/>
-      def train():
-    </text>
-    <text x="55" y="80" font-size="10" fill="#70a5fd" font-family="monospace" opacity="0.4">
-      <animate attributeName="y" values="80;74;80" dur="4.5s" repeatCount="indefinite"/>
-      model.fit()
-    </text>
-    <text x="25" y="380" font-size="10" fill="#a9fef7" font-family="monospace" opacity="0.4">
-      <animate attributeName="y" values="380;374;380" dur="3.5s" repeatCount="indefinite"/>
-      import torch
-    </text>
-    <text x="45" y="400" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.3">
-      <animate attributeName="y" values="400;394;400" dur="4s" repeatCount="indefinite"/>
-      async def agent():
-    </text>
-    <text x="30" y="420" font-size="9" fill="#70a5fd" font-family="monospace" opacity="0.3">
-      <animate attributeName="y" values="420;415;420" dur="3.8s" repeatCount="indefinite"/>
-      await mcp.call()
-    </text>
+    <animate attributeName="opacity" from="0" to="0.8" dur="1s" begin="0.8s" fill="freeze"/>
+    <!-- Left side -->
+    <text x="30" y="55" font-size="11" fill="#bf91f3" font-family="monospace" opacity="0.5">
+      <animate attributeName="y" values="55;48;55" dur="4s" repeatCount="indefinite"/>def train_model():</text>
+    <text x="45" y="75" font-size="10" fill="#70a5fd" font-family="monospace" opacity="0.4">
+      <animate attributeName="y" values="75;68;75" dur="4.5s" repeatCount="indefinite"/>  model.fit(X, y)</text>
+    <text x="20" y="370" font-size="10" fill="#a9fef7" font-family="monospace" opacity="0.45">
+      <animate attributeName="y" values="370;363;370" dur="3.5s" repeatCount="indefinite"/>import torch.nn</text>
+    <text x="40" y="392" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.35">
+      <animate attributeName="y" values="392;385;392" dur="4s" repeatCount="indefinite"/>async def agent():</text>
+    <text x="25" y="414" font-size="9" fill="#70a5fd" font-family="monospace" opacity="0.3">
+      <animate attributeName="y" values="414;408;414" dur="3.8s" repeatCount="indefinite"/>  await mcp.invoke()</text>
+    <text x="50" y="436" font-size="9" fill="#a9fef7" font-family="monospace" opacity="0.25">
+      <animate attributeName="y" values="436;430;436" dur="4.2s" repeatCount="indefinite"/>  return result</text>
+
+    <!-- Right side -->
+    <text x="670" y="50" font-size="10" fill="#a9fef7" font-family="monospace" opacity="0.45">
+      <animate attributeName="y" values="50;43;50" dur="3.8s" repeatCount="indefinite"/>&lt;Agent /&gt;</text>
+    <text x="690" y="72" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.35">
+      <animate attributeName="y" values="72;65;72" dur="4.2s" repeatCount="indefinite"/>{ deploy }</text>
+    <text x="650" y="375" font-size="10" fill="#70a5fd" font-family="monospace" opacity="0.4">
+      <animate attributeName="y" values="375;368;375" dur="4s" repeatCount="indefinite"/>class WolfPak:</text>
+    <text x="670" y="397" font-size="9" fill="#a9fef7" font-family="monospace" opacity="0.35">
+      <animate attributeName="y" values="397;390;397" dur="3.5s" repeatCount="indefinite"/>  self.innovate()</text>
+    <text x="660" y="419" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.3">
+      <animate attributeName="y" values="419;412;419" dur="4.3s" repeatCount="indefinite"/>  yield output</text>
   </g>
 
-  <!-- Right floating code -->
-  <g opacity="0" filter="url(#glow)">
-    <animate attributeName="opacity" from="0" to="0.7" dur="1s" begin="1.2s" fill="freeze"/>
-    <text x="680" y="55" font-size="10" fill="#a9fef7" font-family="monospace" opacity="0.4">
-      <animate attributeName="y" values="55;50;55" dur="3.8s" repeatCount="indefinite"/>
-      &lt;Agent/&gt;
-    </text>
-    <text x="700" y="75" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.3">
-      <animate attributeName="y" values="75;70;75" dur="4.2s" repeatCount="indefinite"/>
-      { code }
-    </text>
-    <text x="660" y="380" font-size="10" fill="#70a5fd" font-family="monospace" opacity="0.4">
-      <animate attributeName="y" values="380;375;380" dur="4s" repeatCount="indefinite"/>
-      class AI:
-    </text>
-    <text x="680" y="400" font-size="9" fill="#a9fef7" font-family="monospace" opacity="0.3">
-      <animate attributeName="y" values="400;395;400" dur="3.5s" repeatCount="indefinite"/>
-      self.think()
-    </text>
-    <text x="670" y="420" font-size="10" fill="#bf91f3" font-family="monospace" opacity="0.3">
-      <animate attributeName="y" values="420;414;420" dur="4.3s" repeatCount="indefinite"/>
-      return &gt;&gt;
-    </text>
-  </g>
+  <!-- Floating symbols -->
+  <text x="115" y="340" font-size="16" fill="#bf91f3" font-family="monospace" opacity="0.12">
+    <animate attributeName="y" values="340;330;340" dur="5s" repeatCount="indefinite"/>{ }</text>
+  <text x="645" y="335" font-size="16" fill="#a9fef7" font-family="monospace" opacity="0.12">
+    <animate attributeName="y" values="335;326;335" dur="4.5s" repeatCount="indefinite"/>[ ]</text>
+  <text x="195" y="48" font-size="13" fill="#70a5fd" font-family="monospace" opacity="0.1">
+    <animate attributeName="y" values="48;41;48" dur="3.5s" repeatCount="indefinite"/>&lt;/&gt;</text>
+  <text x="590" y="45" font-size="13" fill="#bf91f3" font-family="monospace" opacity="0.1">
+    <animate attributeName="y" values="45;38;45" dur="4s" repeatCount="indefinite"/>( )</text>
+  <text x="250" y="435" font-size="11" fill="#a9fef7" font-family="monospace" opacity="0.08">
+    <animate attributeName="y" values="435;429;435" dur="3.2s" repeatCount="indefinite"/>=&gt;</text>
+  <text x="540" y="430" font-size="11" fill="#70a5fd" font-family="monospace" opacity="0.08">
+    <animate attributeName="y" values="430;424;430" dur="3.6s" repeatCount="indefinite"/>::</text>
 
-  <!-- Floating bracket/symbol particles -->
-  <text x="120" y="330" font-size="14" fill="#bf91f3" font-family="monospace" opacity="0.15">
-    <animate attributeName="y" values="330;320;330" dur="5s" repeatCount="indefinite"/>
-    { }
-  </text>
-  <text x="640" y="330" font-size="14" fill="#a9fef7" font-family="monospace" opacity="0.15">
-    <animate attributeName="y" values="330;322;330" dur="4.5s" repeatCount="indefinite"/>
-    [ ]
-  </text>
-  <text x="200" y="50" font-size="12" fill="#70a5fd" font-family="monospace" opacity="0.12">
-    <animate attributeName="y" values="50;44;50" dur="3.5s" repeatCount="indefinite"/>
-    &lt;/&gt;
-  </text>
-  <text x="600" y="50" font-size="12" fill="#bf91f3" font-family="monospace" opacity="0.12">
-    <animate attributeName="y" values="50;43;50" dur="4s" repeatCount="indefinite"/>
-    ( )
-  </text>
-
-  <!-- Small floating dots/particles -->
-  <circle cx="150" cy="160" r="1.5" fill="#a9fef7" opacity="0.3">
-    <animate attributeName="cy" values="160;150;160" dur="3s" repeatCount="indefinite"/>
+  <!-- Floating particles -->
+  <circle cx="145" cy="155" r="1.5" fill="#a9fef7" opacity="0.3">
+    <animate attributeName="cy" values="155;145;155" dur="3s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="650" cy="170" r="1.5" fill="#bf91f3" opacity="0.3">
-    <animate attributeName="cy" values="170;162;170" dur="3.5s" repeatCount="indefinite"/>
+  <circle cx="655" cy="165" r="1.5" fill="#bf91f3" opacity="0.3">
+    <animate attributeName="cy" values="165;157;165" dur="3.5s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.5s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="300" cy="350" r="1" fill="#70a5fd" opacity="0.3">
-    <animate attributeName="cy" values="350;344;350" dur="2.8s" repeatCount="indefinite"/>
+  <circle cx="295" cy="355" r="1" fill="#70a5fd" opacity="0.3">
+    <animate attributeName="cy" values="355;348;355" dur="2.8s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="500" cy="340" r="1" fill="#a9fef7" opacity="0.3">
-    <animate attributeName="cy" values="340;334;340" dur="3.2s" repeatCount="indefinite"/>
+  <circle cx="505" cy="345" r="1" fill="#a9fef7" opacity="0.3">
+    <animate attributeName="cy" values="345;338;345" dur="3.2s" repeatCount="indefinite"/>
   </circle>
-
-  <!-- Keyboard on desk -->
-  <rect x="365" y="265" width="70" height="18" rx="3" fill="#1a1b27" stroke="#30363d" stroke-width="1"/>
-  <!-- Key rows -->
-  <g opacity="0.4">
-    <rect x="370" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="376" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="382" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="388" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="394" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="400" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="406" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="412" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="418" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="424" y="268" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="372" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="378" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="384" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="390" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="396" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="402" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="408" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="414" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="420" y="273" width="4" height="3" rx="0.5" fill="#30363d"/>
-    <rect x="380" y="278" width="40" height="3" rx="0.5" fill="#30363d"/>
-  </g>
-  <!-- Typing key highlight -->
-  <rect x="396" y="273" width="4" height="3" rx="0.5" fill="#a9fef7" opacity="0.3">
-    <animate attributeName="x" values="396;384;408;390;402;396" dur="0.8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.4;0.1;0.4;0.1;0.4;0.1" dur="0.8s" repeatCount="indefinite"/>
-  </rect>
+  <circle cx="60" cy="200" r="1" fill="#bf91f3" opacity="0.2">
+    <animate attributeName="cy" values="200;192;200" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="740" cy="210" r="1" fill="#70a5fd" opacity="0.2">
+    <animate attributeName="cy" values="210;202;210" dur="3.8s" repeatCount="indefinite"/>
+  </circle>
 </svg>
