@@ -45,7 +45,7 @@
 
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="0.6" dur="0.5s" begin="0.4s" fill="freeze"/>
-    <text x="50" y="100" font-size="11" fill="#a9fef7" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on March 26, 2026 by Wolf-Pak Agentic Profile Bot</text>
+    <text x="50" y="100" font-size="11" fill="#a9fef7" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on March 27, 2026 by Wolf-Pak Agentic Profile Bot</text>
   </g>
 
   <circle cx="720" cy="40" r="2" fill="#a9fef7" opacity="0.5">
@@ -108,7 +108,7 @@
       <text x="70" y="396" font-size="12" fill="#a9b1d6" font-family="Segoe UI, Ubuntu, sans-serif">AI-powered LINE bot for Japanese SMEs: automated invoice processing with Freee/M</text>
       <text x="70" y="412" font-size="11" fill="#f1e05a" font-family="Segoe UI, Ubuntu, sans-serif">JavaScript</text>
       <text x="160" y="412" font-size="11" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">0</text>
-      <text x="305" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">accounting-automation</text><text x="431" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">business-automation</text><text x="551" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">freee-api</text>
+      <text x="305" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">accounting-automation</text><text x="442.5" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">business-automation</text><text x="569.0" y="405" font-size="8" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">freee-api</text>
     </g>
     <g opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.6s" begin="1.4s" fill="freeze"/>
