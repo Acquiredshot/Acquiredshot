@@ -45,7 +45,7 @@
 
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="0.6" dur="0.5s" begin="0.4s" fill="freeze"/>
-    <text x="50" y="100" font-size="11" fill="#a9fef7" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on March 29, 2026 by Wolf-Pak Agentic Profile Bot</text>
+    <text x="50" y="100" font-size="11" fill="#a9fef7" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on March 30, 2026 by Wolf-Pak Agentic Profile Bot</text>
   </g>
 
   <circle cx="720" cy="40" r="2" fill="#a9fef7" opacity="0.5">
@@ -73,12 +73,12 @@
       <rect x="30" y="180" width="740" height="70" rx="12" fill="#1a1b27" stroke="#38bdae" stroke-width="1" opacity="0.6">
         <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/>
       </rect>
-      <circle cx="55" cy="200" r="6" fill="#3178c6">
+      <circle cx="55" cy="200" r="6" fill="#3572A5">
         <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <text x="70" y="204" font-size="15" font-weight="bold" fill="#70a5fd" font-family="Segoe UI, Ubuntu, sans-serif">wolf-pak-website</text>
-      <text x="70" y="226" font-size="12" fill="#a9b1d6" font-family="Segoe UI, Ubuntu, sans-serif">No description</text>
-      <text x="70" y="242" font-size="11" fill="#3178c6" font-family="Segoe UI, Ubuntu, sans-serif">TypeScript</text>
+      <text x="70" y="204" font-size="15" font-weight="bold" fill="#70a5fd" font-family="Segoe UI, Ubuntu, sans-serif">Acquiredshot</text>
+      <text x="70" y="226" font-size="12" fill="#a9b1d6" font-family="Segoe UI, Ubuntu, sans-serif">My GitHub Profile README</text>
+      <text x="70" y="242" font-size="11" fill="#3572A5" font-family="Segoe UI, Ubuntu, sans-serif">Python</text>
       <text x="160" y="242" font-size="11" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">0</text>
       
     </g>
@@ -87,12 +87,12 @@
       <rect x="30" y="265" width="740" height="70" rx="12" fill="#1a1b27" stroke="#38bdae" stroke-width="1" opacity="0.6">
         <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="0.8s"/>
       </rect>
-      <circle cx="55" cy="285" r="6" fill="#3572A5">
+      <circle cx="55" cy="285" r="6" fill="#3178c6">
         <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <text x="70" y="289" font-size="15" font-weight="bold" fill="#70a5fd" font-family="Segoe UI, Ubuntu, sans-serif">Acquiredshot</text>
-      <text x="70" y="311" font-size="12" fill="#a9b1d6" font-family="Segoe UI, Ubuntu, sans-serif">My GitHub Profile README</text>
-      <text x="70" y="327" font-size="11" fill="#3572A5" font-family="Segoe UI, Ubuntu, sans-serif">Python</text>
+      <text x="70" y="289" font-size="15" font-weight="bold" fill="#70a5fd" font-family="Segoe UI, Ubuntu, sans-serif">wolf-pak-website</text>
+      <text x="70" y="311" font-size="12" fill="#a9b1d6" font-family="Segoe UI, Ubuntu, sans-serif">No description</text>
+      <text x="70" y="327" font-size="11" fill="#3178c6" font-family="Segoe UI, Ubuntu, sans-serif">TypeScript</text>
       <text x="160" y="327" font-size="11" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">0</text>
       
     </g>
