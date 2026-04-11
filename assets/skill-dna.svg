@@ -101,8 +101,8 @@
 
   <g opacity="0">
     <animate attributeName="opacity" from="0" to="0.6" dur="0.5s" begin="0.4s" fill="freeze"/>
-    <text x="50" y="100" font-size="11" fill="#bf91f3" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on April 10, 2026 by Wolf-Pak Agentic Profile Bot</text>
-    <text x="50" y="120" font-size="11" fill="#565f89" font-family="Segoe UI, Ubuntu, sans-serif">Based on analysis of 99 repositories</text>
+    <text x="50" y="100" font-size="11" fill="#bf91f3" font-family="Segoe UI, Ubuntu, sans-serif">Auto-generated on April 11, 2026 by Wolf-Pak Agentic Profile Bot</text>
+    <text x="50" y="120" font-size="11" fill="#565f89" font-family="Segoe UI, Ubuntu, sans-serif">Based on analysis of 100 repositories</text>
   </g>
 
   
@@ -112,13 +112,13 @@
         <animate attributeName="r" values="5;7;5" dur="2.5s" repeatCount="indefinite" begin="0.4s"/>
       </circle>
       <text x="70" y="178" font-size="14" font-weight="bold" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">Python</text>
-      <text x="740" y="178" font-size="14" font-weight="bold" fill="url(#bar0)" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="end">42%</text>
+      <text x="740" y="178" font-size="14" font-weight="bold" fill="url(#bar0)" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="end">44%</text>
       <rect x="55" y="188" width="550" height="16" rx="8" fill="#1a1b27" stroke="#282d3f" stroke-width="1"/>
       <rect x="55" y="188" width="0" height="16" rx="8" fill="url(#bar0)">
-        <animate attributeName="width" from="0" to="231" dur="1.2s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+        <animate attributeName="width" from="0" to="242" dur="1.2s" begin="0.4s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
       </rect>
       <rect x="55" y="188" width="0" height="16" rx="8" fill="url(#bar0)" opacity="0.3" filter="url(#glow)">
-        <animate attributeName="width" from="0" to="231" dur="1.2s" begin="0.4s" fill="freeze"/>
+        <animate attributeName="width" from="0" to="242" dur="1.2s" begin="0.4s" fill="freeze"/>
         <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" begin="1.6s"/>
       </rect>
     </g>
@@ -128,13 +128,13 @@
         <animate attributeName="r" values="5;7;5" dur="2.5s" repeatCount="indefinite" begin="0.65s"/>
       </circle>
       <text x="70" y="243" font-size="14" font-weight="bold" fill="#c0caf5" font-family="Segoe UI, Ubuntu, sans-serif">Java</text>
-      <text x="740" y="243" font-size="14" font-weight="bold" fill="url(#bar1)" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="end">33%</text>
+      <text x="740" y="243" font-size="14" font-weight="bold" fill="url(#bar1)" font-family="Segoe UI, Ubuntu, sans-serif" text-anchor="end">32%</text>
       <rect x="55" y="253" width="550" height="16" rx="8" fill="#1a1b27" stroke="#282d3f" stroke-width="1"/>
       <rect x="55" y="253" width="0" height="16" rx="8" fill="url(#bar1)">
-        <animate attributeName="width" from="0" to="181" dur="1.2s" begin="0.65s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
+        <animate attributeName="width" from="0" to="176" dur="1.2s" begin="0.65s" fill="freeze" calcMode="spline" keySplines="0.25 0.1 0.25 1"/>
       </rect>
       <rect x="55" y="253" width="0" height="16" rx="8" fill="url(#bar1)" opacity="0.3" filter="url(#glow)">
-        <animate attributeName="width" from="0" to="181" dur="1.2s" begin="0.65s" fill="freeze"/>
+        <animate attributeName="width" from="0" to="176" dur="1.2s" begin="0.65s" fill="freeze"/>
         <animate attributeName="opacity" values="0.1;0.4;0.1" dur="3s" repeatCount="indefinite" begin="1.85s"/>
       </rect>
     </g>
